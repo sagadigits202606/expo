@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    h1 {
+      font-size: 18px;
+      color: #1a2b4a;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+    #qrcode { margin-bottom: 20px; }
+    p {
+      font-size: 12px;
+      color: #555;
+      margin: 0;
+    }
+    @media print {
+      button { display: none; }
+    }
+    button {
+      margin-top: 24px;
+      padding: 8px 24px;
+      background: #1a2b4a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>SagaDigits Exhibition Materials</h1>
+  <div id="qrcode"></div>
+  <p>https://sagadigits202606.github.io/expo/</p>
+  <button onclick="window.print()">印刷する</button>
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://sagadigits202606.github.io/expo/",
+      width: 256,
+      height: 256,
+      colorDark: "#1a2b4a",
+      colorLight: "#ffffff",
+    });
+  </script>
+</body>
+</html>
